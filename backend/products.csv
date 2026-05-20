@@ -1,0 +1,11 @@
+product_id,name,category,material,weight,price,stock
+R101,Classic Diamond Ring,Ring,"18K Gold + Diamond",5.2,135000,Available
+R102,Ruby Solitaire Ring,Ring,"22K Gold + Ruby",4.8,98500,Out of Stock
+N201,Pearl Necklace,Necklace,"18K Gold + Pearl",28.5,245000,Available
+N202,Emerald Choker,Necklace,"22K Gold + Emerald",32.0,310000,Available
+E301,Daily Wear Gold Earrings,Earrings,"22K Gold",7.5,55000,Available
+E302,Diamond Stud Earrings,Earrings,"18K Gold + Diamond",6.2,105000,Available
+B401,Gold Chain Bracelet,Bracelet,"22K Gold",12.0,87500,Available
+B402,Emerald Cuff Bracelet,Bracelet,"18K Gold + Emerald",15.0,150000,Out of Stock
+P501,Lotus Pendant,Pendant,"18K Gold + Diamond",8.0,72000,Available
+P502,Om Symbol Pendant,Pendant,"22K Gold",6.5,48000,Available
