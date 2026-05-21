@@ -45,13 +45,15 @@ def chat(question: str):
     User Question:
     {question}
     Rules:
-    - Answer only from the database.
-    - Do not make up products or information.
-    - If the answer is not available in the database, reply:
-    "I could not find that information in the jewellery database."
+    - Answer only using the database information.
+    - Do not make up products, prices, materials, or details.
+    - If the answer is not available in the database, reply exactly:
+    I could not find that information in the jewellery database.
     - Keep responses short, clear, and professional.
     - Mention product names when relevant.
-    - Dont give as table and give as information
+    - Do NOT use markdown formatting.
+    - Do NOT use symbols like **, bullets, tables, or headings.
+    - Respond in plain readable text only.
     """
 
     response = client.chat.completions.create(
