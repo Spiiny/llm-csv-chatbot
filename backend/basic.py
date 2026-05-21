@@ -51,6 +51,7 @@ def chat(question: str):
     "I could not find that information in the jewellery database."
     - Keep responses short, clear, and professional.
     - Mention product names when relevant.
+    - Dont give as table and give as information
     """
 
     response = client.chat.completions.create(
