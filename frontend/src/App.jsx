@@ -28,7 +28,7 @@ export default function App() {
       setLoading(true)
 
       const response = await fetch(
-        `http://127.0.0.1:8000/chat?question=${encodeURIComponent(currentQuestion)}`
+        `https://llm-csv-chatbot.onrender.com/chat?question=${encodeURIComponent(currentQuestion)}`
       )
 
       const data = await response.json()
