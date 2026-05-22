@@ -4,6 +4,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import os
 from fastapi.middleware.cors import CORSMiddleware
+import json
 
 load_dotenv()
     
@@ -45,16 +46,29 @@ def chat(question: str):
     User Question:
     {question}
     Rules:
-    - Answer only using the database information.
-    - Do not make up products, prices, materials, or details.
-    - If the answer is not available in the database, reply exactly:
-    I could not find that information in the jewellery database.
+    - Answer only from the database.
+    - Do not make up products or information.
+    - If the answer is not available in the database, reply:
+    "I could not find that information in the jewellery database."
     - Keep responses short, clear, and professional.
     - Mention product names when relevant.
-    - Do NOT use markdown formatting.
-    - Do NOT use symbols like **, bullets, tables, or headings.
-    - Respond in plain readable text only.
+    - Generate 3 relevant follow-up questions.
+    - Follow-up questions must relate to the user's query.
+    - Do NOT use markdown.
+    - Return ONLY valid JSON.
+    Example format:
+    {{
+    "answer": "Gold necklaces are available.",
+    "follow_ups": [
+        "Which necklace is cheapest?",
+        "Are diamond necklaces available?",
+        "Show necklaces under ₹1 lakh"
+    ]
+    }}
+
+    The follow up questions should be designed to encourage the user to explore more products and features of the jewellery database, while also providing relevant them with useful information based on their initial query.
     """
+    
 
     response = client.chat.completions.create(
         model="openai/gpt-oss-120b:free",
@@ -65,6 +79,6 @@ def chat(question: str):
             }
         ]
     )
-    return {
-        "answer": response.choices[0].message.content
-    }
+    response_text = response.choices[0].message.content
+    data = json.loads(response_text)
+    return data
