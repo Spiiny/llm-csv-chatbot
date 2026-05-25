@@ -71,7 +71,7 @@ def chat(question: str):
     
 
     response = client.chat.completions.create(
-        model="google/gemini-3.1-flash-lite-preview",
+        model="openai/gpt-oss-120b:free",
         messages=[
             {
                 "role": "user",
